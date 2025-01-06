@@ -19,5 +19,13 @@ def server_time():
 def about():
     return "This is a simple Flask app for learning DevOps practices."
 
+visits = 0
+
+@app.route('/visits')
+def visit_counter():
+    global visits
+    visits += 1
+    return f"This page has been visited {visits} times."
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000,debug=True)
