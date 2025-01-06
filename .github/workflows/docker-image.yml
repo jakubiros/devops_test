@@ -18,5 +18,7 @@ jobs:
       run: docker build . --file ./Dockerfile --tag my-image-name:$(date +%s)
     - name: List images
       run: docker images
+    - name: Run tests
+      run: echo "Test"
     - name: Publish the image
       run: echo 'publish docker'
